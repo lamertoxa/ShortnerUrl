@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Link</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f2f5;
+    }
+
+    .box {
+      width: 300px;
+      padding: 20px;
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+    }
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-field {
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      outline: none;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #3498db;
+      border: none;
+      border-radius: 4px;
+      color: #ffffff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="input-container">
+      <input type="text" class="input-field" placeholder="Shorten your link here...">
+      <button class="submit-btn">Shorten!</button>
+    </div>
+  </div>
+</body>
+</html>

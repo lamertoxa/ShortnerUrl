@@ -1,7 +1,8 @@
-from django.contrib import admin
-from django.urls import path,include
-from . import views
+from django.urls import path
+from .views import index, shortened
 
+app_name = 'home'
 urlpatterns = [
-    path('', views.home),
-    ]
+    path('', index, name='index'),
+    path('s/<int:pk>/', shortened, name='shortened'),
+]

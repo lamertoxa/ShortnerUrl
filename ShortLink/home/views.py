@@ -1,11 +1,19 @@
-from django.shortcuts import render, redirect
+from asgiref.sync import sync_to_async
+from django.shortcuts import render, redirect,get_object_or_404
+from django.http import HttpResponse
+from .models import ShortenedURL
 
-from django.contrib import auth
 
-
-
-def home(request):
+async def index(request):
     if request.method == 'POST':
-        auth.logout(request)
-    return render(request, 'index.html')
+        original_url = request.POST['original_url']
+        shortened_url = ShortenedURL.objects.create(original_url=original_url,)
+        return redirect('shortened', pk=shortened_url.pk)
+    else:
+        return render(request,'index.html')
 
+
+
+def shortened(request, pk):
+    shortened_url = get_object_or_404(ShortenedURL, pk=pk)
+    return redirect(shortened_url.original_url)

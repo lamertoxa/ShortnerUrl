@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'default/css/styles.css' %}" >
+    <title>Shortened URL</title>
+
+
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 20px;
+}
+
+input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #6b73ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #4e54c8;
+}
+
+.result-container {
+    margin-bottom: 20px;
+}
+
+.result-container a {
+    color: #6b73ff;
+    text-decoration: none;
+}
+
+.result-container a:hover {
+    text-decoration: underline;
+}
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <div class="result-container">
+        <h1>Your Shortened URL:</h1>
+        <p>Original URL: <a href="{{ original_url }}" target="_blank">{{ original_url }}</a></p>
+        <p>Shortened URL: <a href="{{ shorted_url }}" target="_blank">{{ shorted_url }}</a></p>
+    </div>
+</div>
+</body>
+</html>

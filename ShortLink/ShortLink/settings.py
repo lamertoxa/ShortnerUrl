@@ -103,7 +103,7 @@ DATABASES = {
         'NAME': 'ubuntu',
         'USER': 'postgres',
         'PASSWORD': 'pegasuss',
-        'HOST': 'localhost',
+        'HOST': '172.31.96.133',
         'PORT': '5432',
     }
 }
